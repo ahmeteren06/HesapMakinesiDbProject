@@ -1,0 +1,46 @@
+﻿@using HesapMakinesiDbProject.Models
+@model  List<Operation>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Gecmis Listesi</title>
+</head>
+<body>
+    <div>
+        <h3>Geçmiş Listesi</h3>
+        <table  class="table">
+            <thead>
+                <tr>
+                    <th scope="col">İşlem Id(Numarası)</th>
+                    <th scope="col">Birinci Sayı</th>
+                    <th scope="col">İşlem Operatörü</th>
+                    <th scope="col">İkinci Sayı</th>
+                    <th scope="col">İşlem Sonucu</th>
+                    <th scope="col">Tarih</th>
+                    <th scope="col">Saat</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td scope="row">@item.OperationId</td>
+                        <td scope="row">@item.Number1</td>
+                        <td scope="row">@item.Operator</td>
+                        <td scope="row">@item.Number2</td>
+                        <td scope="row">@item.Result</td>
+                        <td scope="row">@item.Tarih</td>
+                        <td scope="row">@item.Saat</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

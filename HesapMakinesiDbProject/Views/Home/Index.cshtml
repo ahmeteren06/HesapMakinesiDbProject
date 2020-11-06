@@ -1,0 +1,43 @@
+﻿@model  HesapMakinesiDbProject.Models.Operation
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Hesap Makinesi Uygulaması</h2>
+
+<div class="row">
+    @using (Html.BeginForm("/Index", "Home", FormMethod.Post))
+    {
+        <div class="form-group">
+            <label for="Birinci Sayi"></label>
+            <input type="text" id="Number1" name="Number1" value="@Model.Number1 " class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="İkinci Sayi"></label>
+            <input type="text" id="Number2" name="Number2" value="@Model.Number2 " class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="İşlem Sonucu"></label>
+            <input type="text" id="Result" name="Result" value="@Model.Result " class="form-control" />
+        </div>
+
+
+        <button type="submit" id="btntopla" value="btntopla" name="Hesapla" class="btn btn-danger">Topla(+)</button>
+        <button type="submit" id="btnCikar" value="btnCikar" name="Hesapla" class="btn btn-primary">Çıkar(-)</button>
+        <button type="submit" id="btnCarp" value="btnCarp" name="Hesapla" class="btn  btn-primary">Çarp(*)</button>
+        <button type="submit" id="btnBol" value="btnBol" name="Hesapla" class="btn btn-info">Böl(/)</button>
+
+        <br /> <br />
+    }
+    @using (Html.BeginForm("/GecmisGoster", "Home", FormMethod.Post))
+    {
+        <button type="submit" id="btnHistory" name="Goster" value="btnHistory" class="btn btn-warning">Gecmis</button>
+    }
+
+
+</div>
+<br />
+<br />
+
+<a href="/Home/GecmisListesi" class="btn btn-success">Geçmiş Göster</a>
